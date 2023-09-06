@@ -1,0 +1,33 @@
+def call(s1,s2,matchi,i,j):
+    ti=i
+    j=0
+    while(ti<len(s1)):
+        if(s1[ti]==s2[j]):
+            matchi+=s2[j]
+            print(matchi)
+            ti+=1
+            j+=1
+            print("hi",ti,j)
+        else:
+            if(len(matchi)==0):
+                i+=1
+                j=0
+                print("HI",i,j,matchi)
+                call(s1,s2,matchi,i,j)
+            else:
+                matchi=""
+                j=0
+                i+=1
+                print(i,j,matchi)
+                call(s1,s2,matchi,i,j)
+        if(ti==len(s1)):
+            i=ti
+            print(i,ti)
+            break
+    print("hiee",matchi,len(matchi))
+s1=input()
+s2=input()
+print(len(s1))
+matchi=""
+call(s1,s2,matchi,i=0,j=0)
+        
